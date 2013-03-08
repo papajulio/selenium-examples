@@ -20,7 +20,7 @@ class TestBlogPostOfAgileAragon(unittest.TestCase):
 
         elem = driver.find_element(by=By.ID, value="s")
         elem.click()
-        elem.send_keys("agile aragon")
+        elem.send_keys("kata")
 
         elem = driver.find_element(by=By.ID, value="searchsubmit")
         elem.click()
