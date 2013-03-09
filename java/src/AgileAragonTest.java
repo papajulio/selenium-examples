@@ -1,7 +1,8 @@
 import junit.framework.Assert;
 
-import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,15 +16,19 @@ public class AgileAragonTest {
 	static WebDriver driver;
 	static org.openqa.selenium.support.ui.Wait<WebDriver> wait;	
 	
-	@Before
-	public void setUp() throws Exception {
+	@BeforeClass
+	public static void setUpBeforeClass() {
 		driver = new FirefoxDriver();
 		wait = new WebDriverWait(driver, 30);
+	}
+	
+	@Before
+	public void setUp() throws Exception {
 		driver.get("http://agile-aragon.org/2013/02/25/testing-hacklab-en-marzo/");
 	}
 
-	@After
-	public void tearDown() throws Exception {
+	@AfterClass
+	public static void tearDownClass() throws Exception {
 		driver.close();
 	}
 
